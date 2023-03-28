@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { combineReducers } from "@reduxjs/toolkit"
-import listings from "./modules/listings"
+import createListing from "./modules/listings"
+import LoaderSlice from "./modules/LoaderSlice"
 
 const reducer = combineReducers({
-    listings
+    products: createListing,
+    loader: LoaderSlice
 })
 
 const store = configureStore({

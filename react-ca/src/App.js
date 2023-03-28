@@ -1,26 +1,12 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchAllProducts } from './store/modules/listings';
+import Loader from "./components/shared/Loader";
+import Router  from "./routes/Router";
 
 function App() {
-  const dispatch = useDispatch();
-  const {products} = useSelector(state => state.listings)
-
-  useEffect(() => {
-    dispatch(fetchAllProducts()) 
-  }, [dispatch])
-  console.log(products);
-  
   return (
     <>
-      {products.map((items) => (
-       <span>{items.title}</span>
-      ))}
-     
+      <Router/>
+      <Loader/>
     </>
-   
-    
-  );
+  )
 }
-
 export default App;
