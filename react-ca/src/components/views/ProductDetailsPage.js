@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FetchSingleProduct } from "../../store/modules/listings";
+import { addSingleProductToCart } from "../../store/modules/CartSlice";
 
 const ProductDetailsPage = () => {
     let {id} = useParams();
@@ -13,7 +14,7 @@ const ProductDetailsPage = () => {
 
   return (
     <>  
-        <div className="relative mx-auto max-w-screen-xl px-4 py-8 bg-gray-900">
+        <div className="relative mx-auto max-w-screen px-3 py-20 bg-gray-900">
         {singleProduct && 
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-1">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-1">
@@ -21,7 +22,7 @@ const ProductDetailsPage = () => {
                   <img
                     alt="Les Paul"
                     src={singleProduct.imageUrl}
-                    class="aspect-square w-full rounded-xl object-cover"/>
+                    className="aspect-square w-full rounded-xl object-cover"/>
                   <img
                     alt="Les Paul"
                     src={singleProduct.imageUrl}
@@ -40,7 +41,7 @@ const ProductDetailsPage = () => {
                     </ul>
                   </div>
                 </div>
-                <p class="text-[25px] text-white font-bold">NOK {singleProduct.price}</p>
+                <p className="text-[25px] text-white font-bold">NOK {singleProduct.price}</p>
               </div>
                 <div className="prose max-w-none text-white text-[20px]">
                   <p>
@@ -49,7 +50,8 @@ const ProductDetailsPage = () => {
                 </div>
                     <button
                       type="submit"
-                      className="rounded-[5px] bg-black py-1.5 px-2.5 text-lg font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-800 hover:text-white hover:text-[37px]   mt-auto" >
+                      className="rounded-[5px] bg-white py-1.5 px-2.5 text-[25px] font-semibold text-black shadow-sm ring-1 ring-inset ring-gray-100 hover:bg-gray-900 hover:text-white hover:text-[37px]   mt-auto"
+                      onClick={() => dispatch(addSingleProductToCart(singleProduct))} >
                       Add to Cart
                     </button>
             </div>

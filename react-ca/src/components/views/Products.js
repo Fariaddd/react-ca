@@ -13,18 +13,19 @@ const Products = () => {
   return (
     <div className='w-full bg-gray-800 max-auto'>
     <div className="bg-gray-900">
-      <div className='mx-auto max-w-2x1 py-4 sm:py-24 sm:px-4 lg:max-w-7x1 lg:px-8'>
+      <div className='mx-auto max-w-2x1 py-4 sm:py-10 sm:px-4 lg:max-w-7x1 lg:px-8'>
         <h1 className='text-[40px] font-bold tracking-tight text-center text-white'>AVAILABLE  PRODUCTS!</h1>
         <div className='mt-6 grid grid-cols-1 gap-y-10 gap-x-10 sm:grid-cols-2 lg:grid-cols-4 xl.:gap-x-8'>
           {products.map((product) => (
             <div key={product.id} className='group relative flex flex-col gap-y-3' >
               <div className='min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-[5px] bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80'> 
-                    <img 
-                    
-                    src={product.imageUrl}
-                    alt={product.title}
-                    className='h-full w-full object-cover object-center lg:h-full lg:w-full ' />
                     <Link to={`product/${product.id}`}>
+                        <img 
+                        
+                        src={product.imageUrl}
+                        alt={product.title}
+                        className='h-full w-full object-cover object-center lg:h-full lg:w-full ' />
+                    
                     </Link>
                  </div>
                   <div className='mt-4 flex justify-between'>
@@ -43,7 +44,7 @@ const Products = () => {
                   </div>
                   <button type='button' className='rounded-[5px] bg-white py-1.5 px-2.5 text-lg font-semibold text-black shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-800 hover:text-white hover:text-[37px]   mt-auto' >
                   <Link to={`product/${product.id}`}>
-                    Add to cart
+                    Read More
                     </Link>
                   </button>
                   
