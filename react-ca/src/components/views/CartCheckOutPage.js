@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { removeSingleProductFromCart } from "../../store/modules/CartSlice";
+import CheckOutPage from "./CheckOutPage"
 
 const CartCheckOutPage = () => {
     const dispatch = useDispatch();
@@ -36,8 +37,7 @@ const CartCheckOutPage = () => {
                                                     <div className="flex">
                                                         <button type="button"
                                                                 className="font-medium text-[30px] text-indigo-600 hover:text-indigo-500"
-                                                                onClick={() => dispatch(removeSingleProductFromCart(product.id))}
-                                                                >Remove                                                                   
+                                                                onClick={() => dispatch(removeSingleProductFromCart(product.id))}>Remove                                                                   
                                                         </button>
                                                     </div>
                                                 </div>
@@ -49,9 +49,9 @@ const CartCheckOutPage = () => {
                         </div>
                     </div>                                                   
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">   
-                            <div className="mt-6">
+                            <div className="mt-6"> 
                                 <NavLink to="/check-out"
-                                className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout
+                                className="flex items-center justify-center rounded-md border border-transparent px-6 py-3 font-medium shadow-sm ring-1 text-[35px] ring-inset text-white bg-gray-800 ring-gray-300 hover:bg-gray-800 hover:text-white hover:text-[37px] " onClick={()=>(CheckOutPage)}>Checkout
                                 </NavLink>
                             </div>
                             <div className="mt-6 flex justify-center text-center text-sm text-gray-500"> </div>
