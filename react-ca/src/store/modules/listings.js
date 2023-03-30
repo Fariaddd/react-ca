@@ -23,7 +23,6 @@ export default createListing.reducer;
 
 const {PRODUCTS_SET} = createListing.actions
 const {SINGLE_SET_PRODUCT} = createListing.actions
-
 export const fetchAllProducts = () => async (dispatch) => {
     dispatch(setLoadingState(true))
     try {

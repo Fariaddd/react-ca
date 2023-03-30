@@ -4,6 +4,7 @@ import ProductDetailsPage from "../components/views/ProductDetailsPage"
 import CartCheckOutPage from "../components/views/CartCheckOutPage";
 import ContactUsPage from "../components/views/ContactUsPage";
 import PageNotFound from "../components/views/PageNotFound";
+import CheckOutPage from "../components/views/CheckOutPage";
 
 function Router () {
     return (
@@ -12,7 +13,8 @@ function Router () {
                 <Route path="/" element={<Products/>}/>                               
                 <Route path="/product/:id" element={<ProductDetailsPage/>}/>                
                 <Route path="/cart" element={<CartCheckOutPage/>}/>   
-                <Route path="/contact" element={<ContactUsPage/>}/>          
+                <Route path="/contact" element={<ContactUsPage/>}/>                   
+                <Route path="/check-out" element={<CheckOutPage/>}/>                   
                 <Route path="*" element={<PageNotFound/>}/> 
             </Routes>
         </>
