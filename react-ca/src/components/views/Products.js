@@ -39,7 +39,8 @@ const Products = () => {
                     </div>
                     <p className='text-lg text-white font-bold'>NOK{product.price}</p>
                   </div>
-                  <button type='button' className='rounded-[5px] bg-white py-1.5 px-2.5 text-lg font-semibold text-black shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-800 hover:text-white hover:text-[37px]   mt-auto' >
+                  <button type='button' className='rounded-[5px] bg-white py-1.5 px-2.5 text-lg font-semibold text-black shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-800 hover:text-white hover:text-[37px]   mt-auto'
+                     >
                   <Link to={`product/${product.id}`}>
                     Read More
                     </Link>
@@ -52,5 +53,5 @@ const Products = () => {
   </div>
   )
 }
-
+ 
 export default Products

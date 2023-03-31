@@ -11,7 +11,6 @@ const ProductDetailsPage = () => {
     useEffect(()=>{
         dispatch(FetchSingleProduct(id))
     },[dispatch, id])
-
   return (
     <>  
         <div className="relative mx-auto max-w-screen px-3 py-20 bg-gray-900">
