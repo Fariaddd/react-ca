@@ -8,7 +8,7 @@ const Products = () => {
     const {products} = useSelector(state => state.products)
     useEffect(() => {
       dispatch(fetchAllProducts()) 
-    }, [dispatch])
+    }, [dispatch] )
   return (
     <div className='w-full bg-gray-800 max-auto'>
     <div className="bg-gray-900">

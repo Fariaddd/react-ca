@@ -1,4 +1,3 @@
-import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -12,18 +11,20 @@ const ContactUsPage = () => {
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
-        .min(3, 'Must be 3 characters or more')
-        .required('Required'),
+        .min(3, "Must be 3 characters or more")
+        .required("Required"),
         subject: Yup.string()
         .min(3, 'Must be 3 characters or more')
         .required('Required'),
         textarea: Yup.string()
-        .min(3, 'Must be 3 characters or more')
+        .min(10, 'Must be 10 characters or more')
         .required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
-    onSubmit: values => {
-      alert("fdfd");
+    onSubmit: (values, {resetForm} )=> {
+    alert("Thank you for your message!"); 
+    resetForm();
+    //console.log(values);
     },
     
   });
@@ -41,7 +42,7 @@ const ContactUsPage = () => {
         value={formik.values.firstName}
       />
       {formik.touched.firstName && formik.errors.firstName ? (
-        <div>{formik.errors.firstName}</div>
+        <div className="error">{formik.errors.firstName}</div>
       ) : null}
 
       <label htmlFor="subject"
@@ -56,7 +57,7 @@ const ContactUsPage = () => {
         value={formik.values.subject}
       />
       {formik.touched.subject && formik.errors.subject ? (
-        <div>{formik.errors.subject}</div>
+        <div className="error">{formik.errors.subject}</div>
       ) : null}
 
       <label htmlFor="email"
@@ -71,7 +72,7 @@ const ContactUsPage = () => {
         value={formik.values.email}
       />
       {formik.touched.email && formik.errors.email ? (
-        <div>{formik.errors.email}</div>
+        <div className="error">{formik.errors.email}</div>
       ) : null}
 
         <label htmlFor="textarea"
@@ -86,11 +87,11 @@ const ContactUsPage = () => {
         value={formik.values.textarea}
        />
          {formik.touched.subject && formik.errors.textarea ? (
-        <div>{formik.errors.textarea}</div>
+            <div className="error">{formik.errors.textarea}</div>
       ) : null}
 
         <button className='rounded-[5px] bg-white m-[20px] px-3.5 py-3.5 text-lg font-semibold text-black shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-800 hover:text-white hover:text-[37px]   mt-auto'
-        type="submit" alert='jhjk' >Submit</button>
+        type="submit"  >Submit</button>
     </form>
   );
 };

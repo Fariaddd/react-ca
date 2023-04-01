@@ -11,3 +11,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.error{
+    font-size: 2.2rem;
+    margin-left: 20px;
+    color: greenyellow
+}

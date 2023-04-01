@@ -7,7 +7,6 @@ const createListing = createSlice({
         products: [],
         singleProduct: null,
         total: 0
-    
     },
     reducers: {
         PRODUCTS_SET:(state, action) => {
