@@ -17,7 +17,7 @@ const ContactUsPage = () => {
         .min(3, 'Must be 3 characters or more')
         .required('Required'),
         textarea: Yup.string()
-        .min(10, 'Must be 10 characters or more')
+        .min(5, 'Must be 5 characters or more')
         .required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
     }),
