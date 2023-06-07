@@ -1,4 +1,5 @@
-# react-ca
+# Description
+# JavaScript Frameworks CA
 
 Goal
 To apply knowledge of React to build an eCom store.
